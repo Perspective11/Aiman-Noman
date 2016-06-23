@@ -151,9 +151,9 @@ gulp.task('sass', function () {
   return gulp.src(styles.in)
     .pipe($.plumber())
     .pipe($.sass(styles.sassOpt))
-    .pipe($.size({ title: 'styles In Size' }))
-    .pipe($.pleeease(styles.pleeeaseOpt))
-    .pipe($.size({ title: 'styles Out Size' }))
+    // .pipe($.size({ title: 'styles In Size' }))
+    // .pipe($.pleeease(styles.pleeeaseOpt))
+    // .pipe($.size({ title: 'styles Out Size' }))
     .pipe(gulp.dest(styles.out))
     .pipe(browsersync.reload({ stream: true }));
 });
@@ -216,4 +216,3 @@ gulp.task('default', ['help']);
  function log(msg) {
    console.log(msg);
 }
-

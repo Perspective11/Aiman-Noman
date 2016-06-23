@@ -12651,6 +12651,10 @@ input[type="button"]:focus {
   outline: 0;
 }
 
+nav {
+  margin: 10px;
+}
+
 @media print{
   *,
   *:before,
