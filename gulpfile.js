@@ -9,6 +9,7 @@ var $ = require('gulp-load-plugins')({ lazy: true });
 var browsersync = require('browser-sync');
 var del = require('del');
 var config = require('./config.js')();
+var autoprefixer = require('gulp-autoprefixer');
 
 // Configs
 var
@@ -151,11 +152,12 @@ gulp.task('sass', function () {
   return gulp.src(styles.in)
     .pipe($.plumber())
     .pipe($.sass(styles.sassOpt))
+    .pipe(autoprefixer(styles.pleeeaseOpt.autoprefixer))
     // .pipe($.size({ title: 'styles In Size' }))
     // .pipe($.pleeease(styles.pleeeaseOpt))
     // .pipe($.size({ title: 'styles Out Size' }))
     .pipe(gulp.dest(styles.out))
-    .pipe(browsersync.reload({ stream: true }));
+    .pipe(browsersync.stream());
 });
 
 // Start BrowserSync
